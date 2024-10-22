@@ -20,7 +20,7 @@ function getGreeting() {
 }
 
 app.get('/welcome', (req, res) => {
-    const userName = "Dax";
+    const userName = "birinder";
     const message = getGreeting(); 
     res.render('index', { userName, message });
 });
