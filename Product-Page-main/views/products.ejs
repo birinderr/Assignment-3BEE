@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Product List</h1>
+        <form method="GET" action="/products">
+            <input type="text" name="search" placeholder="Search products" />
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+
+    <main>
+        <h2>Available Products</h2>
+        <ul>
+            <% products.forEach(product => { %>
+                <li>
+                    <strong><%= product.name %></strong> - $<%= product.price.toFixed(2) %>
+                </li>
+            <% }) %>
+        </ul>
+
+        <% if (products.length === 0) { %>
+            <p>No products found.</p>
+        <% } %>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2024 Product Company</p>
+    </footer>
+
+</body>
+</html>
